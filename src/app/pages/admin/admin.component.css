@@ -101,3 +101,19 @@ mat-sidenav{
     align-items: center;
     justify-content: center;
 }
+
+
+/*
+IMAGENES DE PERFIL
+*/
+
+img.perfil{
+    width:96px;
+    height:96px;
+    border-radius:150px;
+}
+
+.perfil{
+    margin-top: 20px;
+    width: 100%;
+}

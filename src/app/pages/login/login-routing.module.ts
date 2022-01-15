@@ -14,7 +14,10 @@ const routes: Routes = [
     path: 'user',
     component: UserComponent,
   },
-
+  {
+    path: 'admin',
+    component: AdminComponent, 
+  },
   {
     path: '',
     loadChildren: () =>

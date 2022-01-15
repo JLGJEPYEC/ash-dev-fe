@@ -23,7 +23,7 @@
                             </div>
                         </div>
                         <mat-divider></mat-divider>
-                        <div class="sidenav-menu-body">
+                        <div class="sidenav-menu-body" (click) = "noViewWelcome()">
                             <div class="sidenav-menu-list">
                                 <div class="sidenav-menu-items">
                                     <a mat-list-item style="padding:0px;" routerLink="dashboard">
@@ -191,7 +191,13 @@
                 </mat-toolbar>
                 <mat-divider></mat-divider>
                 <router-outlet></router-outlet>
+                <div *ngIf="!noMostrarBienvenida">
+                    <app-dashboard></app-dashboard>
+                </div>
+                
             </mat-sidenav-content>
+            
         </mat-sidenav-container>
+        
     </ng-container>
 </div>

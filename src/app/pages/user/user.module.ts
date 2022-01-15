@@ -18,8 +18,9 @@ import { UrgencyComponent } from './urgency/urgency.component';
 import { EmergencyComponent } from './emergency/emergency.component';
 import { LaboratoryComponent } from './laboratory/laboratory.component';
 import { PatientsComponent } from './patients/patients.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 @NgModule({
-  declarations: [UserComponent,AppointmentsComponent, AdmissionComponent, TopicalComponent, CardiologyComponent, MedicineComponent, HistoriesComponent, HospitalizationComponent, UrgencyComponent, EmergencyComponent, LaboratoryComponent, PatientsComponent],
+  declarations: [UserComponent,AppointmentsComponent, AdmissionComponent, TopicalComponent, CardiologyComponent, MedicineComponent, HistoriesComponent, HospitalizationComponent, UrgencyComponent, EmergencyComponent, LaboratoryComponent, PatientsComponent, DashboardComponent],
   imports: [
     CommonModule,
     UserRoutingModule,

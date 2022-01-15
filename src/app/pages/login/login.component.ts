@@ -22,8 +22,14 @@ export class LoginComponent implements OnInit {
 login(): void{
     if(this.user = USERS_DATA.filter(user => user.username == this.controlUser.value)[0]){
       if(this.user.password == this.controlPass.value){
-        this.router.navigateByUrl('/user')
-        console.log(this.user.username)
+        console.log(this.user.id_role);
+        if(this.user.id_role[0] == "R2"){
+          this.router.navigateByUrl('/admin');
+        }else {
+          this.router.navigateByUrl('/user');
+        }
+        
+        
         LOGINS_DATA.pop();
         LOGINS_DATA.push({username: this.controlUser.value, password: this.controlPass.value});
       }

@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild , TemplateRef } from '@angular/core';
 import { BreakpointObserver } from '@angular/cdk/layout';
 import { Router } from '@angular/router';
 import { MatSidenav } from '@angular/material/sidenav';
@@ -14,7 +14,7 @@ export class UserComponent implements OnInit {
   name!: string;
   email!:string;
   username!:string;
-
+  noMostrarBienvenida: boolean = true;
   @ViewChild(MatSidenav)
   sidenav!: MatSidenav;
 
@@ -44,9 +44,16 @@ export class UserComponent implements OnInit {
     }else{
       this.router.navigateByUrl('/login');
     }
+    this.noMostrarBienvenida=false;
+    console.log(this.noMostrarBienvenida);
   }
   logout(): void {
     void this.router.navigateByUrl('/login');
+  }
+
+  noViewWelcome(): void {
+    this.noMostrarBienvenida = true;
+    console.log(this.noMostrarBienvenida);
   }
 
 }

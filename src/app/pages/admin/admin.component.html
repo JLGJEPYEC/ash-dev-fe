@@ -1,9 +1,7 @@
 <div style="display: block;">
     <ng-container>
         <mat-toolbar class="cabecera" fxLayout="row">
-            <div fxFlex="15">
-                <span>CPPs</span>
-            </div>
+            
             <div fxFlex>
                 <button mat-button (click)="sidenav.toggle()">
                     <span class="material-icons">menu_open</span>
@@ -11,7 +9,7 @@
             </div>
             <div fxFlex="40" fxLayout="row" fxLayoutAlign="space-around center">
                 <div style="font-size: 15px; padding-bottom: 0px;" fxFlexAlign="stretch" layout-align="center">
-                    <button mat-button [matMenuTriggerFor]="menu">Lazaro Llacua Erick Adrian <span class="material-icons">
+                    <button mat-button [matMenuTriggerFor]="menu">{{name}}<span class="material-icons">
                         expand_more
                         </span>
                     </button>
@@ -47,9 +45,13 @@
                             <div class="logo">
                                 <img class="logo" src="">
                             </div>
+                            <div style="text-align: center;">
+                                <img class="perfil" src="assets/perfil.jpg">
+                            </div>
                             <div class="nombre">
                                 <h4>BIENVENIDO</h4>
-                                <span>Lazaro Llacua Erick Adrian </span>
+                                <h5>{{name}}</h5>
+                                <h6>{{email}}</h6>
                             </div>
                         </div>
                         <mat-divider></mat-divider>
@@ -85,16 +87,7 @@
                                         </div>
                                     </a>
                                 </div>
-                                <div class="sidenav-menu-items">
-                                    <a mat-list-item style="padding:0px;" routerLink="user-detail">
-                                        <div class="sdnav-menu-items_li">
-                                            <div class="sdnav-menu-items-inner">
-                                                <span class="material-icons">content_paste</span>
-                                                <div style="padding-left: 10px;">REPORTE</div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
+                                
                             </div>
                         </div>
                     </div>
