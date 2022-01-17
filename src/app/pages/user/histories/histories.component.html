@@ -1,99 +1,48 @@
 <div class="histories">
-    <div>
-        <h3>Historias clínicas</h3>
-    </div>
-    <div class="container">
-        <div class="row">
-          <div class="col md-4" >
-            <h5>Datos del asegurado</h5>
-            <div class="card">
-                <div class="card-body col-sm-12 mb-2">
-                    <div class="row">
-                        <div class="form-group col-sm-4 mb-2">
-                            <input type="text" id="input1-group2" name="input1-group2" class="form-control" placeholder="N° HC">
-                        </div>
-                        <div class="form-group col-sm-2 mb-2">
-                            <button type="button" class="btn btn-primary"> Buscar</button>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="form-group col-sm-4 mb-2">
-                            <input type="text" id="input1-group2" name="input1-group2" class="form-control" placeholder="DNI">
-                        </div>
-                        <div class="form-group col-sm-2 mb-2">
-                            <button type="button" class="btn btn-primary"> Buscar</button>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="form-group col-sm-4 mb-2">
-                            <h6 class="card-subtitle mb-2 text-muted">Historia clínica</h6>
-                            <input type="text" class="form-control" placeholder="" disabled>
-                          </div>
-                          <div class="form-group col-sm-4 mb-2">
-                            <h6 class="card-subtitle mb-2 text-muted">DNI</h6>
-                            <input type="text" class="form-control" placeholder="" disabled>
-                          </div>
-                          <div class="form-group col-sm-4 mb-2">
-                              <h6 class="card-subtitle mb-2 text-muted">Edad</h6>
-                              <input type="text" class="form-control" placeholder="" disabled>
-                          </div>
-                    </div>
-                    <div class="row">
-                        <div class="form-group col-sm-6 mb-2">
-                          <h6 class="card-subtitle mb-2 text-muted">Nombre</h6>
-                          <input type="text" class="form-control" placeholder="" disabled>
-                        </div>
-                        <div class="form-group col-sm-6 mb-2">
-                          <h6 class="card-subtitle mb-2 text-muted">Apellido</h6>
-                          <input type="text" class="form-control" placeholder="" disabled>
-                        </div>
-                    </div>
-                  </div>
-                </div>
-            </div>
+  <div>
+    <h3>Historias clínicas</h3>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <h5>Diagnosticos</h5>
+      <div class="card">
+        <div class="mat-elevation-z8">
+          <table mat-table [dataSource]="dataSource">
+
+            <!-- Position Column -->
+            <ng-container matColumnDef="idreporte">
+              <th mat-header-cell *matHeaderCellDef> Id Reporte </th>
+              <td mat-cell *matCellDef="let element"> {{element.idreporte}} </td>
+            </ng-container>
+
+            <!-- Name Column -->
+            <ng-container matColumnDef="fecha">
+              <th mat-header-cell *matHeaderCellDef> Fecha </th>
+              <td mat-cell *matCellDef="let element"> {{element.fecha}} </td>
+            </ng-container>
+
+            <!-- Weight Column -->
+            <ng-container matColumnDef="tipo">
+              <th mat-header-cell *matHeaderCellDef> Tipo de Reporte </th>
+              <td mat-cell *matCellDef="let element"> {{element.tipo}} </td>
+            </ng-container>
+
+            <!-- Symbol Column -->
+            <ng-container matColumnDef="reporte">
+              <th mat-header-cell *matHeaderCellDef> Reporte </th>
+              <td mat-cell *matCellDef="let element"> {{element.reporte}} </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+
+          <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons
+            aria-label="Seleccionar pagina de reporte">
+          </mat-paginator>
         </div>
+      </div>
     </div>
-    <div class="container">
-        <div class="row">
-            <h5>Diagnosticos</h5>
-            <div class="card">
-              <div class="mat-elevation-z8">
-                <table mat-table [dataSource]="dataSource">
-
-                  <!-- Position Column -->
-                  <ng-container matColumnDef="idreporte">
-                    <th mat-header-cell *matHeaderCellDef> Id Reporte </th>
-                    <td mat-cell *matCellDef="let element"> {{element.idreporte}} </td>
-                  </ng-container>
-
-                  <!-- Name Column -->
-                  <ng-container matColumnDef="fecha">
-                    <th mat-header-cell *matHeaderCellDef> Fecha </th>
-                    <td mat-cell *matCellDef="let element"> {{element.fecha}} </td>
-                  </ng-container>
-
-                  <!-- Weight Column -->
-                  <ng-container matColumnDef="tipo">
-                    <th mat-header-cell *matHeaderCellDef> Tipo de Reporte </th>
-                    <td mat-cell *matCellDef="let element"> {{element.tipo}} </td>
-                  </ng-container>
-
-                  <!-- Symbol Column -->
-                  <ng-container matColumnDef="reporte">
-                    <th mat-header-cell *matHeaderCellDef> Reporte </th>
-                    <td mat-cell *matCellDef="let element"> {{element.reporte}} </td>
-                  </ng-container>
-
-                  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-                  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-                </table>
-
-                <mat-paginator [pageSizeOptions]="[5, 10, 20]"
-                               showFirstLastButtons
-                               aria-label="Seleccionar pagina de reporte">
-                </mat-paginator>
-              </div>
-            </div>
-        </div>
-    </div>
+  </div>
 </div>
