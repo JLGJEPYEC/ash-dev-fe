@@ -7,6 +7,9 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModuleModule } from './angular-material/angular-material.module';
 import { RouterModule } from '@angular/router';
+
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+
 import { AdminComponent } from './pages/admin/admin.component';
 
 /*import { PharmacyComponent } from './pages/pharmacy/pharmacy.component';
@@ -23,14 +26,6 @@ import { AppointmentsComponent } from './pages/user/appointments/appointments.co
 @NgModule({
   declarations: [
     AppComponent,
-    /*EspecializacionComponent,
-    AdminComponent,
-    PharmacyComponent,
-    CustomerComponent,
-    CategoriesComponent,
-    ProductsComponent,
-    StudentsComponent,
-    TopicalComponent,*/
   ],
   imports: [
     BrowserModule,
@@ -40,7 +35,8 @@ import { AppointmentsComponent } from './pages/user/appointments/appointments.co
     RouterModule,
     FlexLayoutModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatSlideToggleModule
   ],
   providers: [],
   bootstrap: [AppComponent],

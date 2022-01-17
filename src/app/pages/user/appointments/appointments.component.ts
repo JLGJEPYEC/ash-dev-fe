@@ -20,7 +20,7 @@ import { APPOINTMENTS_DATA } from '../../../mock/appointment.mock';
 
 export class AppointmentsComponent implements OnInit {
   now!: Date;
-  
+
   dni!: number;
   name !: string;
   lastname!: string ;
@@ -107,7 +107,7 @@ export class AppointmentsComponent implements OnInit {
 
 
   //esta funcion es la encargada de generar una cita
-  generateAppointment(){
+  generateAppointment(){ 
     let id: string = "";
     let num!:number;
     if(this.dni!=0 && 
