@@ -1,3 +1,6 @@
+//CUS 01 IMPORTANTE
+
+
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
 import { Specialty } from '../../../core/models/specialty.models';
@@ -17,6 +20,7 @@ import { APPOINTMENTS_DATA } from '../../../mock/appointment.mock';
 
 export class AppointmentsComponent implements OnInit {
   now!: Date;
+  
   dni!: number;
   name !: string;
   lastname!: string ;
@@ -27,6 +31,7 @@ export class AppointmentsComponent implements OnInit {
   controlMedic!: FormControl; 
   controlDate !: FormControl;
   controlSchedule !: FormControl;
+  //gestion de arreglos almacenados
   specialties: Specialty[] = SPECIALTIES_DATA;
   medics!: Medic[];
   schedules: string[] = [];
@@ -100,6 +105,8 @@ export class AppointmentsComponent implements OnInit {
     return form;
   }
 
+
+  //esta funcion es la encargada de generar una cita
   generateAppointment(){
     let id: string = "";
     let num!:number;
