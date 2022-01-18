@@ -2,15 +2,15 @@
     <ng-container>
         <mat-sidenav-container>
             <mat-sidenav class="sidenav-menu-container" #sidenav mode="over" closed disableClose
-                [fixedInViewport]="true"  class="mat-elevation-z0">
+                [fixedInViewport]="true" class="mat-elevation-z0">
                 <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
-                  <mat-icon *ngIf="!sidenav.opened">
-                      menu
-                  </mat-icon>
-                  <mat-icon *ngIf="sidenav.opened" style="color: white">
-                      close
-                  </mat-icon>
-              </button>
+                    <mat-icon *ngIf="!sidenav.opened">
+                        menu
+                    </mat-icon>
+                    <mat-icon *ngIf="sidenav.opened" style="color: white">
+                        close
+                    </mat-icon>
+                </button>
                 <mat-nav-list>
                     <div class="sidenav-menu-container-inner">
                         <div class="perfil">
@@ -23,18 +23,9 @@
                             </div>
                         </div>
                         <mat-divider></mat-divider>
-                        <div class="sidenav-menu-body" (click) = "noViewWelcome()">
+                        <div class="sidenav-menu-body" >
                             <div class="sidenav-menu-list">
-                                <div class="sidenav-menu-items">
-                                    <a mat-list-item style="padding:0px;" routerLink="dashboard">
-                                        <div class="sdnav-menu-items_li">
-                                            <div class="sdnav-menu-items-inner">
-                                                <span class="material-icons">pie_chart_outline</span>
-                                                <div style="padding-left: 10px;">Dashboard</div>
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
+                                
                                 <div class="sidenav-menu-items">
                                     <a mat-list-item style="padding:0px;" routerLink="histories">
                                         <div class="sdnav-menu-items_li">
@@ -55,8 +46,8 @@
                                         </div>
                                     </a>
                                 </div>
-                                
-                                
+
+
                                 <div class="sidenav-menu-items">
                                     <a mat-list-item style="padding:0px;" routerLink="medicine">
                                         <div class="sdnav-menu-items_li">
@@ -67,21 +58,21 @@
                                         </div>
                                     </a>
                                 </div>
-                                
+
                                 <div class="sidenav-menu-items">
-                                  <a mat-list-item style="padding:0px;" routerLink="patients">
-                                      <div class="sdnav-menu-items_li">
-                                          <div class="sdnav-menu-items-inner">
-                                              <span class="material-icons">person</span>
-                                              <div style="padding-left: 10px;">Asegurados</div>
-                                          </div>
-                                      </div>
-                                  </a>
-                              </div>
-                                
-                              
-                              
-                              
+                                    <a mat-list-item style="padding:0px;" routerLink="patients">
+                                        <div class="sdnav-menu-items_li">
+                                            <div class="sdnav-menu-items-inner">
+                                                <span class="material-icons">person</span>
+                                                <div style="padding-left: 10px;">Asegurados</div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+
+
+
+
                             </div>
                         </div>
                     </div>
@@ -97,11 +88,11 @@
                     <div fxFlex="nogrow" fxLayout="row" fxLayoutAlign="end center">
                         <div style="font-size: 15px; padding-bottom: 0px;" fxFlexAlign="stretch" layout-align="center">
                             <button mat-button [matMenuTriggerFor]="menu">{{name}}<span class="material-icons">
-                                expand_more
+                                    expand_more
                                 </span>
                             </button>
                             <mat-menu #menu="matMenu" xPosition="before">
-                                <button mat-menu-item class="buttonMenu" >
+                                <button mat-menu-item class="buttonMenu">
                                     <a mat-list-item [routerLink]="'user-detail'">
 
                                         <span class="material-icons" id="blogOut">face</span>
@@ -109,8 +100,8 @@
                                     </a>
                                 </button>
                                 <button mat-menu-item class="buttonMenu">
-                                    <a mat-list-item  (click)="logout()" >
-                                        <span class="material-icons" id="blogOut" >power_settings_new</span>
+                                    <a mat-list-item (click)="logout()">
+                                        <span class="material-icons" id="blogOut">power_settings_new</span>
                                         Salir
                                     </a>
                                 </button>
@@ -126,13 +117,11 @@
                 </mat-toolbar>
                 <mat-divider></mat-divider>
                 <router-outlet></router-outlet>
-                <div *ngIf="!noMostrarBienvenida">
-                    <app-dashboard></app-dashboard>
-                </div>
-                
+
+
             </mat-sidenav-content>
-            
+
         </mat-sidenav-container>
-        
+
     </ng-container>
 </div>

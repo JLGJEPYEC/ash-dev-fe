@@ -14,7 +14,7 @@ import { MedicineComponent } from './medicine/medicine.component';
 import { HistoriesComponent } from './histories/histories.component';
 
 import { PatientsComponent } from './patients/patients.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
+
 @NgModule({
   declarations: [UserComponent,
     AppointmentsComponent, 
@@ -22,8 +22,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     MedicineComponent, 
     HistoriesComponent, 
 
-    PatientsComponent, 
-    DashboardComponent],
+    PatientsComponent],
   imports: [
     CommonModule,
     UserRoutingModule,

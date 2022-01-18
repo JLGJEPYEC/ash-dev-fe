@@ -1,17 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-export interface Users{
-  nro: number;
-  nombre: string;
-  apellidoPat: string;
-  apellidoMat: string;
-  dni: string;
-}
+import { User } from 'src/app/core/models/user.models';
+import { USERS_DATA } from 'src/app/mock/user.mock';
 
-const ELEMENT_DATA: Users[]= [
-  {nro:1, nombre:'Erick Adrian', apellidoPat:'Lazaro',apellidoMat:'Llacua',dni:'77777777'},
-  {nro:2, nombre:'Abraham Moises', apellidoPat:'Mamani',apellidoMat:'Shucra',dni:'77777777'},
-  {nro:3, nombre:'Gustavo Shunior', apellidoPat:'Moreno',apellidoMat:'Titx',dni:'77777777'},
-]
+
+const ELEMENT_DATA: User [] = USERS_DATA;
 @Component({
   selector: 'app-users',
   templateUrl: './users.component.html',
@@ -19,7 +11,7 @@ const ELEMENT_DATA: Users[]= [
 })
 export class UsersComponent implements OnInit {
 
-  displayedColumns: string[] = ['nro', 'nombre', 'apellidoPat', 'apellidoMat','dni'];
+  displayedColumns: string[] = ['id','username', 'name', 'lastname', 'dni', 'id_role', 'id_specialty'];
   dataSource = ELEMENT_DATA;
 
   constructor() { }

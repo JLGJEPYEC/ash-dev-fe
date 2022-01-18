@@ -12,32 +12,51 @@
             <mat-divider></mat-divider>
             <mat-card-content>
                 <table mat-table [dataSource]="dataSource" class="mat-elevation-z" fxFlex="100%">
-                    <!--Nro Column-->
-                    <ng-container matColumnDef="nro">
-                        <th mat-header-cell *matHeaderCellDef> No. </th>
-                        <td mat-cell *matCellDef="let element"> {{element.nro}} </td>
+                    
+
+                    <!--ID-->
+                    <ng-container matColumnDef="id">
+                        <th mat-header-cell *matHeaderCellDef> ID </th>
+                        <td mat-cell *matCellDef="let element"> {{element.id}} </td>
                     </ng-container>
 
-                    <!-- Name Column -->
-                    <ng-container matColumnDef="nombre">
+                    <!--NOMBRE DE REGISTRO-->
+                    <ng-container matColumnDef="username">
+                        <th mat-header-cell *matHeaderCellDef> Nombre Acceso </th>
+                        <td mat-cell *matCellDef="let element"> {{element.username}} </td>
+                    </ng-container>
+
+
+                    <!-- NOMBRES -->
+                    <ng-container matColumnDef="name">
                         <th mat-header-cell *matHeaderCellDef> Nombre </th>
-                        <td mat-cell *matCellDef="let element"> {{element.nombre}} </td>
+                        <td mat-cell *matCellDef="let element"> {{element.name}} </td>
                     </ng-container>
 
-                    <!-- Weight Column -->
-                    <ng-container matColumnDef="apellidoPat">
-                        <th mat-header-cell *matHeaderCellDef> Apellido Paterno </th>
-                        <td mat-cell *matCellDef="let element"> {{element.apellidoPat}} </td>
+                    <!-- APELLIDOS PATERNOS Y MATERNOS-->
+                    <ng-container matColumnDef="lastname">
+                        <th mat-header-cell *matHeaderCellDef> Apellidos </th>
+                        <td mat-cell *matCellDef="let element"> {{element.lastname}} </td>
                     </ng-container>
 
-                    <!-- Symbol Column -->
-                    <ng-container matColumnDef="apellidoMat">
-                        <th mat-header-cell *matHeaderCellDef> Apellido Materno </th>
-                        <td mat-cell *matCellDef="let element"> {{element.apellidoMat}} </td>
-                    </ng-container>
+                    <!-- DNI -->
                     <ng-container matColumnDef="dni">
                         <th mat-header-cell *matHeaderCellDef>  DNI </th>
                         <td mat-cell *matCellDef="let element"> {{element.dni}} </td>
+                    </ng-container>
+
+
+                    <!-- ROL QUE CUMPLE EL USUARIO -->
+                    <ng-container matColumnDef="id_role">
+                        <th mat-header-cell *matHeaderCellDef> Rol </th>
+                        <td mat-cell *matCellDef="let element"> {{element.id_role}} </td>
+                    </ng-container>
+                    
+
+                    <!-- ESPECIALIDAD DEL USUARIO -->
+                    <ng-container matColumnDef="id_specialty">
+                        <th mat-header-cell *matHeaderCellDef> Especialidad </th>
+                        <td mat-cell *matCellDef="let element"> {{element.id_specialty}} </td>
                     </ng-container>
 
                     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

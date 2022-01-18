@@ -1,36 +1,30 @@
 
 .cabecera{
-    top: 0;
-    position: fixed;
-    z-index:999;
-    display:absolute;
-    background-color: #4e80b9;
+    background-color: white;
+    color:gray;
 }
-
-
 mat-sidenav-container{
-    height: 1828px;
+    height: 100%;
     position: absolute;
     width: 100%;
-
+    overflow-y:hidden;
 }
 mat-sidenav-content{
     margin-right: 0px;
-    padding-top: 64px;
 }
 
 mat-nav-list{
     padding:0px;
 }
- 
+
 mat-sidenav{
-   background-color: #4e80b9;
+   background-color: #0f172a;
 }
 
 .sidenav-menu-container{
     z-index: 999;
     height: 100%;
-    width: 221px;
+    width: 231px;
     display: flex;
     /*margin-top: 65px;*/
     /*para mantener en su sitio*/
@@ -41,8 +35,8 @@ mat-sidenav{
     border-right: 1px solid;
 }
 .sidenav-menu-container-inner{
-    width:220px;
-    height: 602px;
+    width:230px;
+    height: 802px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -57,6 +51,7 @@ mat-sidenav{
     flex-direction:column ;
     height: 100%;
     padding-top:20px;
+    overflow-y:hidden;
 }
 .sidenav-menu-list{
     width: 200px;
@@ -72,15 +67,18 @@ mat-sidenav{
     border-bottom-style: solid;
     border-bottom-width: 1px;
     width: 100%;
+    border-radius: 5px;
 }
-
+.sdnav-menu-items_li:hover{
+    background-color: #2c3344;
+}
 .sdnav-menu-items-inner{
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    color:#000000; 
+    color:#ffffff; 
     font-size: 14px;
-    font-family: fantasy;
+    font-family: Arial, Helvetica, sans-serif, 'Arial Narrow', Arial, sans-serif;
 }
 
 

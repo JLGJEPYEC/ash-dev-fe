@@ -1,44 +1,16 @@
 <div style="display: block;">
     <ng-container>
-        <mat-toolbar class="cabecera" fxLayout="row">
-            
-            <div fxFlex>
-                <button mat-button (click)="sidenav.toggle()">
-                    <span class="material-icons">menu_open</span>
-                </button>
-            </div>
-            <div fxFlex="40" fxLayout="row" fxLayoutAlign="space-around center">
-                <div style="font-size: 15px; padding-bottom: 0px;" fxFlexAlign="stretch" layout-align="center">
-                    <button mat-button [matMenuTriggerFor]="menu">{{name}}<span class="material-icons">
-                        expand_more
-                        </span>
-                    </button>
-                    <mat-menu #menu="matMenu" xPosition="before">
-                        <button mat-menu-item class="buttonMenu" > 
-                            <a mat-list-item routerLink="user-detail">
-                                <span class="material-icons" id="blogOut">face</span>
-                                Perfil
-                            </a>
-                        </button>
-                        <button mat-menu-item class="buttonMenu">
-                            <a mat-list-item  routerLink="#">
-                                <span class="material-icons" id="blogOut">power_settings_new</span>
-                                Salir 
-                            </a>
-                        </button>
-                    </mat-menu>
-                </div>
-                <div fxFlexAlign="stretch" layout-align="center">
-                    <button mat-button class="buttonMenu">
-                        <span class="material-icons" id="logOut">power_settings_new</span>
-                        SALIR
-                    </button>
-                </div>
-            </div>
-        </mat-toolbar>
         <mat-sidenav-container>
-            <mat-sidenav class="sidenav-menu-container" #sidenav mode="side" opened disableClose
-                [fixedInViewport]="true" [fixedTopGap]="65" class="mat-elevation-z0">
+            <mat-sidenav class="sidenav-menu-container" #sidenav mode="over" closed disableClose
+                [fixedInViewport]="true"  class="mat-elevation-z0">
+                <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
+                    <mat-icon *ngIf="!sidenav.opened">
+                        menu
+                    </mat-icon>
+                    <mat-icon *ngIf="sidenav.opened" style="color: white">
+                        close
+                    </mat-icon>
+                </button>
                 <mat-nav-list>
                     <div class="sidenav-menu-container-inner">
                         <div id="perfil">
@@ -48,10 +20,9 @@
                             <div style="text-align: center;">
                                 <img class="perfil" src="assets/perfil.jpg">
                             </div>
-                            <div class="nombre">
-                                <h4>BIENVENIDO</h4>
-                                <h5>{{name}}</h5>
-                                <h6>{{email}}</h6>
+                            <div style="color: white; text-align: center; padding-top: 10px;">
+                                <h6>{{name}}</h6>
+                                <h6 style="color:white;">{{email}}</h6>
                             </div>
                         </div>
                         <mat-divider></mat-divider>
@@ -87,13 +58,48 @@
                                         </div>
                                     </a>
                                 </div>
-                                
+
                             </div>
                         </div>
                     </div>
                 </mat-nav-list>
             </mat-sidenav>
             <mat-sidenav-content>
+                <mat-toolbar class="cabecera" >
+                    <div fxFlex>
+                        <button mat-button (click)="sidenav.toggle()">
+                            <span class="material-icons">menu</span>
+                        </button>
+                    </div>
+                    <div fxFlex="nogrow" fxLayout="row" fxLayoutAlign="end center">
+                        <div style="font-size: 15px; padding-bottom: 0px;" fxFlexAlign="stretch" layout-align="center">
+                            <button mat-button [matMenuTriggerFor]="menu">{{name}}<span class="material-icons">
+                                    expand_more
+                                </span>
+                            </button>
+                            <mat-menu #menu="matMenu" xPosition="before">
+                                <button mat-menu-item class="buttonMenu">
+                                    <a mat-list-item routerLink="user-detail">
+                                        <span class="material-icons" id="blogOut">face</span>
+                                        Perfil
+                                    </a>
+                                </button>
+                                <button mat-menu-item class="buttonMenu">
+                                    <a mat-list-item (click)="logout()">
+                                        <span class="material-icons" id="blogOut">power_settings_new</span>
+                                        Salir
+                                    </a>
+                                </button>
+                            </mat-menu>
+                        </div>
+                        <div fxFlexAlign="stretch" layout-align="center">
+                            <button mat-button class="buttonMenu" (click)="logout()">
+                                <span class="material-icons" id="logOut">power_settings_new</span>
+                                SALIR
+                            </button>
+                        </div>
+                    </div>
+                </mat-toolbar>
                 <mat-divider></mat-divider>
                 <router-outlet></router-outlet>
             </mat-sidenav-content>

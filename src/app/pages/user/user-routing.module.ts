@@ -9,7 +9,7 @@ import { MedicineComponent } from './medicine/medicine.component';
 import { UserDetailComponent } from '../admin/users/user-detail/user-detail.component';
 
 import { PatientsComponent } from './patients/patients.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
+
 const routes: Routes = [
     {
         path: '',
@@ -23,10 +23,7 @@ const routes: Routes = [
             path: 'appointments',
             component: AppointmentsComponent,
             },
-            {
-            path: 'dashboard',
-            component: DashboardComponent,  
-            },
+
 
             {
             path: 'medicine',

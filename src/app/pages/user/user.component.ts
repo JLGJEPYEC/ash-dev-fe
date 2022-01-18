@@ -14,7 +14,7 @@ export class UserComponent implements OnInit {
   name!: string;
   email!:string;
   username!:string;
-  noMostrarBienvenida: boolean = true;
+
   @ViewChild(MatSidenav)
   sidenav!: MatSidenav;
 
@@ -44,17 +44,13 @@ export class UserComponent implements OnInit {
     }else{
       this.router.navigateByUrl('/login');
     }
-    this.noMostrarBienvenida=false;
-    console.log(this.noMostrarBienvenida);
+
   }
   logout(): void {
     void this.router.navigateByUrl('/login');
   }
 
-  noViewWelcome(): void {
-    this.noMostrarBienvenida = true;
-    console.log(this.noMostrarBienvenida);
-  }
+
 
 }
 
