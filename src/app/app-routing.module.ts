@@ -12,21 +12,13 @@ const routes: Routes = [
     loadChildren: () =>
     import('./pages/login/login.module').then((m) => m.LoginModule),
   },
-  {
-    path: 'home',
-    loadChildren: () =>
-    import('./pages/home/home.module').then((m) => m.HomeModule),
-  },
+
   {
     path: 'admin',
     loadChildren: () =>
     import('./pages/admin/admin.module').then((m) => m.AdminModule),
   },
-  {
-    path: 'especializacion',
-    loadChildren: () =>
-    import('./pages/especializacion/especializacion.module').then((m) => m.EspecializacionModule),
-  },
+  
   {
     path: 'user',
     loadChildren: () =>
